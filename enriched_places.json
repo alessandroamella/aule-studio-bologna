@@ -1,7 +1,6 @@
 [
   {
     "name": "Nuova Sala Baricentro",
-    "address": "via Belmeloro 8/2",
     "openingHours": {
       "Monday": ["09:00-22:00"],
       "Tuesday": ["09:00-22:00"],
@@ -10,11 +9,13 @@
       "Friday": ["09:00-22:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Belmeloro, 8/2, 40126 Bologna BO, Italy",
+    "lat": 44.4958702,
+    "lon": 11.3550085
   },
   {
     "name": "Palazzo Paleotti",
-    "address": "via Zamboni 25",
     "openingHours": {
       "Monday": ["08:00-24:00"],
       "Tuesday": ["08:00-24:00"],
@@ -23,11 +24,13 @@
       "Friday": ["08:00-24:00"],
       "Saturday": ["08:00-22:00"],
       "Sunday": ["08:00-22:00"]
-    }
+    },
+    "address": "Palazzo Paleotti, Via Zamboni, 25, 40126 Bologna BO, Italy",
+    "lat": 44.4963128,
+    "lon": 11.351276
   },
   {
     "name": "Sala studio Centro Polifunzionale Unione",
-    "address": "via Azzo Gardino 33",
     "openingHours": {
       "Monday": ["09:00-22:00"],
       "Tuesday": ["09:00-22:00"],
@@ -36,11 +39,13 @@
       "Friday": ["09:00-22:00"],
       "Saturday": ["11:00-19:00"],
       "Sunday": ["11:00-19:00"]
-    }
+    },
+    "address": "Via Azzo Gardino, 33, 40122 Bologna BO, Italy",
+    "lat": 44.5010398,
+    "lon": 11.337238
   },
   {
     "name": "Sala studio via Selmi",
-    "address": "via Selmi 3",
     "openingHours": {
       "Monday": ["13:00-18:00"],
       "Tuesday": ["13:00-18:00"],
@@ -49,11 +54,13 @@
       "Friday": ["13:00-18:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Francesco Selmi, 3, 40126 Bologna BO, Italy",
+    "lat": 44.4960983,
+    "lon": 11.3543216
   },
   {
     "name": "Sala studio via Ranzani",
-    "address": "via Ranzani 14",
     "openingHours": {
       "Monday": ["08:30-19:00"],
       "Tuesday": ["08:30-19:00"],
@@ -62,11 +69,13 @@
       "Friday": ["08:30-19:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Camillo Ranzani, 14, 40127 Bologna BO, Italy",
+    "lat": 44.5011628,
+    "lon": 11.3590053
   },
   {
     "name": "Sala studio via Irnerio",
-    "address": "via Irnerio 46",
     "openingHours": {
       "Monday": ["08:30-20:00"],
       "Tuesday": ["08:30-20:00"],
@@ -75,11 +84,13 @@
       "Friday": ["08:30-20:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Universita' degli studi di Bologna, Biblioteca. Dipartimento di Fisica dell'Università, Via Irnerio, 46, 40126 Bologna BO, Italy",
+    "lat": 44.4993267,
+    "lon": 11.3538749
   },
   {
     "name": "Sala studio viale Berti Pichat",
-    "address": "viale Berti Pichat 6",
     "openingHours": {
       "Monday": ["09:00-24:00"],
       "Tuesday": ["09:00-24:00"],
@@ -88,11 +99,13 @@
       "Friday": ["09:00-24:00"],
       "Saturday": ["09:00-24:00"],
       "Sunday": ["09:00-24:00"]
-    }
+    },
+    "address": "Viale Carlo Berti Pichat, 6, 40127 Bologna BO, Italy",
+    "lat": 44.5005567,
+    "lon": 11.3570334
   },
   {
     "name": "Sala studio via Petroni",
-    "address": "via Petroni 13/b",
     "openingHours": {
       "Monday": ["09:00-24:00"],
       "Tuesday": ["09:00-24:00"],
@@ -101,11 +114,13 @@
       "Friday": ["09:00-24:00"],
       "Saturday": ["09:00-24:00"],
       "Sunday": ["09:00-24:00"]
-    }
+    },
+    "address": "Via Giuseppe Petroni, 13, 40126 Bologna BO, Italy",
+    "lat": 44.4951091,
+    "lon": 11.3517039
   },
   {
     "name": "Sala studio Palazzo Hercolani",
-    "address": "strada Maggiore 45",
     "openingHours": {
       "Monday": ["09:00-19:00"],
       "Tuesday": ["09:00-19:00"],
@@ -114,11 +129,13 @@
       "Friday": ["09:00-19:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Str. Maggiore, 45, 40125 Bologna BO, Italy",
+    "lat": 44.4912522,
+    "lon": 11.3539826
   },
   {
     "name": "Mediateca Giuseppe Guglielmi",
-    "address": "via Marsala 3",
     "openingHours": {
       "Monday": ["10:00-13:30"],
       "Tuesday": ["10:00-18:30"],
@@ -127,11 +144,13 @@
       "Friday": ["10:00-13:30"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Marsala, 3, 40126 Bologna BO, Italy",
+    "lat": 44.49749860000001,
+    "lon": 11.3436407
   },
   {
     "name": "Sala studio area Bertalia",
-    "address": "via Terracini 28",
     "openingHours": {
       "Monday": ["08:00-19:00"],
       "Tuesday": ["08:00-19:00"],
@@ -140,11 +159,13 @@
       "Friday": ["08:00-19:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Umberto Terracini, 28, 40131 Bologna BO, Italy",
+    "lat": 44.5137886,
+    "lon": 11.3202626
   },
   {
     "name": "Scuderia - Ergo",
-    "address": "Piazza Verdi 2",
     "openingHours": {
       "Monday": ["09:00-18:00"],
       "Tuesday": ["09:00-18:00"],
@@ -153,11 +174,13 @@
       "Friday": ["09:00-18:00"],
       "Saturday": ["09:00-18:00"],
       "Sunday": ["09:00-18:00"]
-    }
+    },
+    "address": "Ex Scuderie dei Bentivoglio, P.za Giuseppe Verdi, 2, 40126 Bologna BO, Italy",
+    "lat": 44.4961311,
+    "lon": 11.3510875
   },
   {
     "name": "Residenza ER.GO Carducci",
-    "address": "via Antonio Gandusio 14",
     "openingHours": {
       "Monday": ["09:00-24:00"],
       "Tuesday": ["09:00-24:00"],
@@ -166,11 +189,13 @@
       "Friday": ["09:00-24:00"],
       "Saturday": ["09:00-24:00"],
       "Sunday": ["09:00-24:00"]
-    }
+    },
+    "address": "Via Antonio Gandusio, 14, 40127 Bologna BO, Italy",
+    "lat": 44.5045083,
+    "lon": 11.3546599
   },
   {
     "name": "Residenza ER.GO Umberto Eco",
-    "address": "via San Petronio Vecchio 28-30",
     "openingHours": {
       "Monday": ["09:00-24:00"],
       "Tuesday": ["09:00-24:00"],
@@ -179,11 +204,13 @@
       "Friday": ["09:00-24:00"],
       "Saturday": ["09:00-24:00"],
       "Sunday": ["09:00-24:00"]
-    }
+    },
+    "address": "Via S. Petronio Vecchio, 28/30, 40125 Bologna BO, Italy",
+    "lat": 44.4900094,
+    "lon": 11.3527169
   },
   {
     "name": "Sale studio Navile UE3",
-    "address": "via Gobetti 93/2",
     "openingHours": {
       "Monday": ["08:30-18:30"],
       "Tuesday": ["08:30-18:30"],
@@ -192,11 +219,13 @@
       "Friday": ["08:30-18:30"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Piero Gobetti, 93/2, 40129 Bologna BO, Italy",
+    "lat": 44.52173990000001,
+    "lon": 11.3364343
   },
   {
     "name": "Sale studio Navile Beverara",
-    "address": "via Beverara 123",
     "openingHours": {
       "Monday": ["08:30-18:30"],
       "Tuesday": ["08:30-18:30"],
@@ -205,11 +234,13 @@
       "Friday": ["08:30-18:30"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via della Beverara, 123, 40131 Bologna BO, Italy",
+    "lat": 44.5220999,
+    "lon": 11.3314964
   },
   {
     "name": "Residenza ER.GO Fioravanti",
-    "address": "via Greta Garbo 15",
     "openingHours": {
       "Monday": ["09:00-24:00"],
       "Tuesday": ["09:00-24:00"],
@@ -218,11 +249,13 @@
       "Friday": ["09:00-24:00"],
       "Saturday": ["09:00-24:00"],
       "Sunday": ["09:00-24:00"]
-    }
+    },
+    "address": "Via Greta Garbo, 15, 40129 Bologna BO, Italy",
+    "lat": 44.5145482,
+    "lon": 11.3352612
   },
   {
     "name": "Sala studio Mensa Ingegneria",
-    "address": "viale del Risorgimento 2 Mensa della facoltà di Ingegneria",
     "openingHours": {
       "Monday": ["15:00-end_of_building_hours"],
       "Tuesday": ["15:00-end_of_building_hours"],
@@ -231,11 +264,13 @@
       "Friday": ["15:00-end_of_building_hours"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Viale del Risorgimento, 2, 40136 Bologna BO, Italy",
+    "lat": 44.4872717,
+    "lon": 11.3301984
   },
   {
     "name": "Fornace Galotti – Navile",
-    "address": "40129 Bologna, via Gobetti 92",
     "openingHours": {
       "Monday": ["09:00-18:00"],
       "Tuesday": ["09:00-18:00"],
@@ -244,11 +279,13 @@
       "Friday": ["09:00-18:00"],
       "Saturday": [],
       "Sunday": []
-    }
+    },
+    "address": "Via Piero Gobetti, 92, 40129 Bologna BO, Italy",
+    "lat": 44.5217943,
+    "lon": 11.3376905
   },
   {
     "name": "Sala studio di Imola",
-    "address": "Piazza del Duomo 9, Imola",
     "openingHours": {
       "Monday": ["08:30-19:30"],
       "Tuesday": ["08:30-19:30"],
@@ -257,6 +294,9 @@
       "Friday": ["08:30-19:30"],
       "Saturday": ["08:30-19:30"],
       "Sunday": []
-    }
+    },
+    "address": "Piazza del Duomo, 9, 40026 Imola BO, Italy",
+    "lat": 44.35306749999999,
+    "lon": 11.7113522
   }
 ]
