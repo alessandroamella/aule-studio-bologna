@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Nuova Sala Baricentro",
+    "openingHours": "Lun-Ven 9:00 - 22:00",
+    "address": "via Belmeloro 8/2"
+  },
+  {
+    "name": "Palazzo Paleotti",
+    "openingHours": "Lun-Ven 8:00 - 24:00, Sab-Dom 8:00 - 22:00",
+    "address": "via Zamboni 25"
+  },
+  {
+    "name": "Sala studio Centro Polifunzionale Unione",
+    "openingHours": "Lun-Ven 9:00 - 22:00, Sab-Dom 11:00 - 19:00",
+    "address": "via Azzo Gardino 33"
+  },
+  {
+    "name": "Sala studio via Selmi",
+    "openingHours": "Lun-Ven 13:00 - 18:00",
+    "address": "via Selmi 3"
+  },
+  {
+    "name": "Sala studio via Ranzani",
+    "openingHours": "Lun-Ven 8:30 - 19:00",
+    "address": "via Ranzani 14"
+  },
+  {
+    "name": "Sala studio via Irnerio",
+    "openingHours": "Lun-Ven 8:30 - 20:00",
+    "address": "via Irnerio 46"
+  },
+  {
+    "name": "Sala studio viale Berti Pichat",
+    "openingHours": "Lun-Dom 9:00 - 24:00",
+    "address": "viale Berti Pichat 6"
+  },
+  {
+    "name": "Sala studio via Petroni",
+    "openingHours": "Lun-Dom 9:00 - 24:00",
+    "address": "via Petroni 13/b"
+  },
+  {
+    "name": "Sala studio Palazzo Hercolani",
+    "openingHours": "Lun-Ven 9:00 - 19:00",
+    "address": "strada Maggiore 45"
+  },
+  {
+    "name": "Mediateca Giuseppe Guglielmi",
+    "openingHours": "Lun, Gio, Ven 10:00 - 13:30; Mar, Mer 10:00 - 18:30",
+    "address": "via Marsala 3"
+  },
+  {
+    "name": "Sala studio area Bertalia",
+    "openingHours": "Lun-Ven 8:00 - 19:00",
+    "address": "via Terracini 28"
+  },
+  {
+    "name": "Scuderia - Ergo",
+    "openingHours": "Lun-Dom 9:00 - 18:00",
+    "address": "Piazza Verdi 2"
+  },
+  {
+    "name": "Residenza ER.GO Carducci",
+    "openingHours": "Lun-Dom 9:00 - 24:00",
+    "address": "via Antonio Gandusio 14"
+  },
+  {
+    "name": "Residenza ER.GO Umberto Eco",
+    "openingHours": "Lun-Dom 9:00 - 24:00",
+    "address": "via San Petronio Vecchio 28-30"
+  },
+  {
+    "name": "Sale studio Navile UE3",
+    "openingHours": "Lun-Ven 8:30 - 18:30",
+    "address": "via Gobetti 93/2"
+  },
+  {
+    "name": "Sale studio Navile Beverara",
+    "openingHours": "Lun-Ven 8:30 - 18:30",
+    "address": "via Beverara 123"
+  },
+  {
+    "name": "Residenza ER.GO Fioravanti",
+    "openingHours": "Lun-Dom 9:00 - 24:00",
+    "address": "via Greta Garbo 15"
+  },
+  {
+    "name": "Sala studio Mensa Ingegneria",
+    "openingHours": "Lun-Ven dalle 15:00 fino a chiusura edificio",
+    "address": "via Risorgimento 2"
+  },
+  {
+    "name": "Fornace Galotti – Navile",
+    "openingHours": "Lun-Ven 9:00 - 18:00",
+    "address": "via Gobetti 92"
+  },
+  {
+    "name": "Sala studio di Imola",
+    "openingHours": "Lun-Sab 8:30 - 19:30",
+    "address": "Piazza del Duomo 9, Imola"
+  }
+]
