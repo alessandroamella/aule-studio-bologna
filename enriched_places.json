@@ -257,11 +257,11 @@
   {
     "name": "Sala studio Mensa Ingegneria",
     "openingHours": {
-      "Monday": ["15:00-end_of_building_hours"],
-      "Tuesday": ["15:00-end_of_building_hours"],
-      "Wednesday": ["15:00-end_of_building_hours"],
-      "Thursday": ["15:00-end_of_building_hours"],
-      "Friday": ["15:00-end_of_building_hours"],
+      "Monday": ["15:00-?"],
+      "Tuesday": ["15:00-?"],
+      "Wednesday": ["15:00-?"],
+      "Thursday": ["15:00-?"],
+      "Friday": ["15:00-?"],
       "Saturday": [],
       "Sunday": []
     },
