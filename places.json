@@ -258,5 +258,18 @@
       "Saturday": ["08:30-19:30"],
       "Sunday": []
     }
+  },
+  {
+    "name": "Biblioteca comunale \"Lea Garofalo\"",
+    "address": "Piazza della Liberazione, 5, 41013 Castelfranco Emilia MO",
+    "openingHours": {
+      "Monday": ["09:00-13:00", "14:30-19:00"],
+      "Tuesday": ["09:00-13:00", "14:30-19:00"],
+      "Wednesday": ["09:00-13:00", "14:30-19:00"],
+      "Thursday": ["09:00-13:00", "14:30-19:00"],
+      "Friday": ["09:00-13:00", "14:30-19:00"],
+      "Saturday": [],
+      "Sunday": []
+    }
   }
 ]
