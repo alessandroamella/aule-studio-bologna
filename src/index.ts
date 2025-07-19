@@ -1,8 +1,8 @@
+import path from 'node:path';
 import { endOfDay, format, isWithinInterval, parse } from 'date-fns';
 import dotenv from 'dotenv-safe';
 import express from 'express';
 import helmet from 'helmet';
-import path from 'node:path';
 import winston from 'winston';
 import closingPeriods from '../closing-periods.json';
 import enrichedPlaces from '../enriched_places.json';
