@@ -1,0 +1,20 @@
+[
+  {
+    "from": "28-07",
+    "to": "31-08",
+    "except": [
+      "Sala studio Centro Polifunzionale Unione",
+      "Sala studio viale Berti Pichat",
+      "Sala studio di Imola"
+    ]
+  },
+  {
+    "from": "19-07",
+    "to": "19-07",
+    "for": ["Palazzo Paleotti"]
+  },
+  {
+    "from": "04-08",
+    "to": "31-08"
+  }
+]

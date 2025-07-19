@@ -30,6 +30,12 @@
     />
 
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
       #map {
         height: 100vh;
       }
@@ -50,11 +56,39 @@
       .directions-link {
         display: inline-block;
         margin-top: 8px;
-        color: #2196f3;
+        color: #fff !important;
+        background: #2196f3;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .directions-link:hover {
+        background: #1976d2;
         text-decoration: none;
       }
-      .directions-link:hover {
-        text-decoration: underline;
+
+      .directions-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #2196f3;
+        color: white;
+        padding: 10px 14px;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+
+      .directions-btn:hover {
+        background-color: #1976d2;
+      }
+
+      .directions-btn svg {
+        fill: #fff;
+        flex-shrink: 0;
       }
     </style>
   </head>
@@ -73,18 +107,185 @@
       integrity="sha256-C/JaxXKdn78wqPqsXHFBU94K74gsGsLbj8pqg9UQ3Fc="
       crossorigin="anonymous"
     ></script>
-
     <script>
+      // --- TRANSLATION SETUP ---
+
+      // 1. Define all translations
+      const translations = {
+        // Fallback Language
+        en: {
+          showMyLocation: "Show my location",
+          openingHours: "Opening Hours:",
+          closingPeriods: "Closing Periods:",
+          closed: "Closed",
+          currentlyOpen: "🟢 Currently Open",
+          currentlyClosed: "🔴 Currently Closed",
+          holidayClosed: "🔴 Closed - Holiday:",
+          getDirections: "Get Directions",
+          errorLoading: "Failed to load study room locations. Please try again later.",
+          days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          to: "to"
+        },
+        it: {
+          showMyLocation: "Mostra la mia posizione",
+          openingHours: "Orari di apertura:",
+          closingPeriods: "Periodi di chiusura:",
+          closed: "Chiuso",
+          currentlyOpen: "🟢 Attualmente Aperto",
+          currentlyClosed: "🔴 Attualmente Chiuso",
+          holidayClosed: "🔴 Chiuso - Festività:",
+          getDirections: "Ottieni indicazioni",
+          errorLoading: "Impossibile caricare le aule studio. Riprova più tardi.",
+          days: ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"],
+          to: "a"
+        },
+        cs: {
+          showMyLocation: "Ukázat moji polohu",
+          openingHours: "Otevírací doba:",
+          closingPeriods: "Období uzavření:",
+          closed: "Zavřeno",
+          currentlyOpen: "🟢 Nyní otevřeno",
+          currentlyClosed: "🔴 Nyní zavřeno",
+          holidayClosed: "🔴 Zavřeno - Svátek:",
+          getDirections: "Získat trasu",
+          errorLoading: "Načtení studoven se nezdařilo. Zkuste to prosím později.",
+          days: ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"],
+          to: "do"
+        },
+        el: {
+          showMyLocation: "Εμφάνιση της τοποθεσίας μου",
+          openingHours: "Ωράριο λειτουργίας:",
+          closingPeriods: "Περίοδοι κλεισίματος:",
+          closed: "Κλειστά",
+          currentlyOpen: "🟢 Ανοιχτά τώρα",
+          currentlyClosed: "🔴 Κλειστά τώρα",
+          holidayClosed: "🔴 Κλειστά - Αργία:",
+          getDirections: "Λήψη οδηγιών",
+          errorLoading: "Η φόρτωση των τοποθεσιών απέτυχε. Παρακαλώ δοκιμάστε ξανά αργότερα.",
+          days: ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο", "Κυριακή"],
+          to: "έως"
+        },
+        pt: {
+          showMyLocation: "Mostrar minha localização",
+          openingHours: "Horário de funcionamento:",
+          closingPeriods: "Períodos de encerramento:",
+          closed: "Fechado",
+          currentlyOpen: "🟢 Aberto agora",
+          currentlyClosed: "🔴 Fechado agora",
+          holidayClosed: "🔴 Fechado - Feriado:",
+          getDirections: "Obter direções",
+          errorLoading: "Falha ao carregar locais de estudo. Por favor, tente novamente mais tarde.",
+          days: ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"],
+          to: "a"
+        },
+        es: {
+          showMyLocation: "Mostrar mi ubicación",
+          openingHours: "Horario de apertura:",
+          closingPeriods: "Periodos de cierre:",
+          closed: "Cerrado",
+          currentlyOpen: "🟢 Abierto actualmente",
+          currentlyClosed: "🔴 Cerrado actualmente",
+          holidayClosed: "🔴 Cerrado - Festivo:",
+          getDirections: "Obtener direcciones",
+          errorLoading: "Error al cargar las salas de estudio. Por favor, inténtelo de nuevo más tarde.",
+          days: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+          to: "a"
+        },
+        fr: {
+          showMyLocation: "Afficher ma position",
+          openingHours: "Heures d'ouverture :",
+          closingPeriods: "Périodes de fermeture :",
+          closed: "Fermé",
+          currentlyOpen: "🟢 Ouvert actuellement",
+          currentlyClosed: "🔴 Fermé actuellement",
+          holidayClosed: "🔴 Fermé - Jour férié :",
+          getDirections: "Obtenir l'itinéraire",
+          errorLoading: "Échec du chargement des salles d'étude. Veuillez réessayer plus tard.",
+          days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+          to: "à"
+        },
+        nl: {
+          showMyLocation: "Toon mijn locatie",
+          openingHours: "Openingstijden:",
+          closingPeriods: "Sluitingsperiodes:",
+          closed: "Gesloten",
+          currentlyOpen: "🟢 Nu geopend",
+          currentlyClosed: "🔴 Nu gesloten",
+          holidayClosed: "🔴 Gesloten - Feestdag:",
+          getDirections: "Routebeschrijving",
+          errorLoading: "Laden van studeerlocaties mislukt. Probeer het later opnieuw.",
+          days: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"],
+          to: "tot"
+        },
+        de: {
+          showMyLocation: "Meinen Standort anzeigen",
+          openingHours: "Öffnungszeiten:",
+          closingPeriods: "Schließungszeiten:",
+          closed: "Geschlossen",
+          currentlyOpen: "🟢 Jetzt geöffnet",
+          currentlyClosed: "🔴 Jetzt geschlossen",
+          holidayClosed: "🔴 Geschlossen - Feiertag:",
+          getDirections: "Route berechnen",
+          errorLoading: "Fehler beim Laden der Lernorte. Bitte versuchen Sie es später erneut.",
+          days: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
+          to: "bis"
+        },
+        ar: {
+          showMyLocation: "أظهر موقعي",
+          openingHours: "ساعات العمل:",
+          closingPeriods: "فترات الإغلاق:",
+          closed: "مغلق",
+          currentlyOpen: "🟢 مفتوح حالياً",
+          currentlyClosed: "🔴 مغلق حالياً",
+          holidayClosed: "🔴 مغلق - عطلة:",
+          getDirections: "احصل على الاتجاهات",
+          errorLoading: "فشل تحميل مواقع غرف الدراسة. يرجى المحاولة مرة أخرى في وقت لاحق.",
+          days: ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"],
+          to: "إلى"
+        },
+        zh: {
+          showMyLocation: "显示我的位置",
+          openingHours: "开放时间：",
+          closingPeriods: "关闭时段：",
+          closed: "关闭",
+          currentlyOpen: "🟢 目前开放",
+          currentlyClosed: "🔴 目前关闭",
+          holidayClosed: "🔴 关闭 - 节假日：",
+          getDirections: "获取路线",
+          errorLoading: "加载自习室位置失败。请稍后再试。",
+          days: ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],
+          to: "至"
+        }
+      };
+
+      // 2. Detect browser language and select the appropriate translation set
+      function getSelectedLanguage() {
+        const browserLangs = navigator.languages || [navigator.language || 'en'];
+        for (const lang of browserLangs) {
+          // Use the primary language code (e.g., 'en' from 'en-US')
+          const langCode = lang.split('-')[0];
+          if (translations[langCode]) {
+            return langCode;
+          }
+        }
+        return 'en'; // Fallback to English
+      }
+
+      // 3. Get the active translation object
+      const lang = getSelectedLanguage();
+      const t = translations[lang];
+
+      // --- ORIGINAL SCRIPT (MODIFIED TO USE TRANSLATIONS) ---
+
       // Initialize the map
       const map = L.map("map").setView([44.496, 11.353], 15);
 
       // Add OpenStreetMap tiles
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      // Add locate control
+      // Add locate control with translated title
       L.control
         .locate({
           position: "topleft",
@@ -94,7 +295,7 @@
           icon: "fa fa-location-arrow",
           showPopup: false,
           strings: {
-            title: "Show my location"
+            title: t.showMyLocation // Translated
           },
           locateOptions: {
             enableHighAccuracy: true
@@ -104,6 +305,7 @@
 
       function isCurrentlyOpen(openingHours) {
         const now = new Date();
+        // Logic must use English day names to match the keys from the data source
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const currentDay = days[now.getDay()];
         const currentTime = now.getHours() * 100 + now.getMinutes();
@@ -120,33 +322,76 @@
       }
 
       function formatOpeningHours(openingHours) {
-        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-        const currentDay = new Date().toLocaleString("en-us", { weekday: "long" });
+        // English days for data lookup and logic
+        const englishDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        // Get current day in English to find the match for CSS styling
+        const currentDayInEnglish = new Date().toLocaleString("en-us", {
+          weekday: "long"
+        });
 
-        let html =
-          '<div class="opening-hours"><div class="opening-hours-title">Opening Hours:</div>';
+        let html = `<div class="opening-hours-left"><div class="opening-hours-title">${t.openingHours}</div>`; // Translated
 
-        days.forEach(day => {
+        englishDays.forEach((day, index) => {
           const hours = openingHours[day];
-          const hoursText = hours && hours.length > 0 ? hours.join(", ") : "Closed";
-          const dayClass = day === currentDay ? "current-day" : "";
-          html += `<div class="day-hours ${dayClass}">${day}: ${hoursText}</div>`;
+          const hoursText = hours && hours.length > 0 ? hours.join(", ") : t.closed; // Translated
+          const dayClass = day === currentDayInEnglish ? "current-day" : "";
+          // Display the translated day name
+          html += `<div class="day-hours ${dayClass}">${t.days[index]}: ${hoursText}</div>`;
         });
 
         html += "</div>";
         return html;
       }
 
+      function formatClosingPeriods(closingPeriods, locationName) {
+        if (!closingPeriods || closingPeriods.length === 0) {
+          return "";
+        }
+
+        let html = `<div class="closing-periods-right"><div class="closing-periods-title">${t.closingPeriods}</div>`; // Translated
+
+        closingPeriods.forEach(period => {
+          let applies = false;
+
+          if (period.for && period.for.length > 0) {
+            applies = period.for.includes(locationName);
+          } else if (period.except && period.except.length > 0) {
+            applies = !period.except.includes(locationName);
+          } else {
+            applies = true;
+          }
+
+          if (applies) {
+            const fromDate = period.from;
+            const toDate = period.to;
+            // Use translated "to" for date ranges
+            const dateRange = fromDate === toDate ? fromDate : `${fromDate} ${t.to} ${toDate}`; // Translated
+            html += `<div class="period">📅 ${dateRange}</div>`;
+          }
+        });
+
+        html += "</div>";
+        return html.includes('<div class="period">') ? html : "";
+      }
+
       // Fetch locations from the server
       async function loadLocations() {
         try {
-          // First check if it's a holiday
+          // Fetch holiday information
           const holidayResponse = await fetch("/holiday");
           if (!holidayResponse.ok) {
             throw new Error("Failed to fetch holiday information");
           }
           const holidayName = await holidayResponse.json();
 
+          // Fetch closing periods
+          const closingPeriodsResponse = await fetch("/closing-periods");
+          if (!closingPeriodsResponse.ok) {
+            throw new Error("Failed to fetch closing periods");
+          }
+          const closingPeriods = await closingPeriodsResponse.json();
+
+          // Fetch locations
           const response = await fetch("/data");
           if (!response.ok) {
             throw new Error("Failed to fetch locations");
@@ -155,8 +400,8 @@
 
           // Add markers
           locations.forEach(location => {
-            // If it's a holiday, location is closed regardless of opening hours
-            const isOpen = holidayName ? false : isCurrentlyOpen(location.openingHours);
+            // If it's a holiday or location.isClosed, location is closed regardless of opening hours
+            const isOpen = holidayName || location.isClosed ? false : isCurrentlyOpen(location.openingHours);
 
             // Create marker with custom color
             const markerOptions = {
@@ -178,24 +423,41 @@
             // Create Google Maps directions link
             const directionsLink = `https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lon}`;
 
-            // Create and bind popup with enhanced content
+            // Create status HTML using translated strings
+            let statusHtml = "";
+            if (holidayName) {
+              statusHtml = `<strong>${t.holidayClosed} ${holidayName}</strong>`; // Translated
+            } else if (location.isClosed) {
+              statusHtml = `<strong>${t.currentlyClosed}</strong>`; // Translated
+            } else {
+              statusHtml = `<strong>${isOpen ? t.currentlyOpen : t.currentlyClosed}</strong>`; // Translated
+            }
+
+            // Format closing periods for this location
+            const closingPeriodsHtml = formatClosingPeriods(closingPeriods, location.name);
+
+            // Create and bind popup with enhanced, translated content
             const popupContent = `
               <b>${location.name}</b><br>
               ${location.address}<br>
-              ${
-                holidayName
-                  ? `<strong>🔴 Closed - Holiday: ${holidayName}</strong>`
-                  : `<strong>${isOpen ? "🟢 Currently Open" : "🔴 Currently Closed"}</strong>`
-              }
-              ${formatOpeningHours(location.openingHours)}
-              <a href="${directionsLink}" target="_blank" class="directions-link">Get Directions</a>
-            `;
+              ${statusHtml}
+              <div style="display: flex; gap: 15px;">
+                ${formatOpeningHours(location.openingHours)}
+                ${closingPeriodsHtml}
+              </div>
+              <a href="${directionsLink}" target="_blank" class="directions-link directions-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                  <path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 2c5.519 0 10 4.481 10 10s-4.481 10-10 10-10-4.481-10-10 4.481-10 10-10zm1.476 12.955c.988-.405 1.757-1.211 2.116-2.216l2.408-6.739-6.672 2.387c-1.006.36-1.811 1.131-2.216 2.119l-3.065 7.494 7.429-3.045zm-.122-4.286c.551.551.551 1.446 0 1.996-.551.551-1.445.551-1.996 0-.551-.55-.551-1.445 0-1.996.551-.551 1.445-.551 1.996 0z"/>
+                </svg>
+                <span>${t.getDirections}</span>
+              </a>
+            `; // Translated
 
             marker.bindPopup(popupContent);
           });
         } catch (error) {
           console.error("Error loading locations:", error);
-          alert("Failed to load study room locations. Please try again later.");
+          alert(t.errorLoading); // Translated
         }
       }
 
