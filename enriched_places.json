@@ -313,5 +313,20 @@
       "Saturday": [],
       "Sunday": []
     }
+  },
+  {
+    "name": "Casa della Conoscenza Biblioteca \"C.Pavese\"",
+    "address": "Via Porrettana, 360, 40033 Casalecchio di Reno BO, Italy",
+    "openingHours": {
+      "Monday": [],
+      "Tuesday": ["14:00-19:30"],
+      "Wednesday": ["14:00-19:30"],
+      "Thursday": ["09:00-14:00"],
+      "Friday": ["09:00-14:00"],
+      "Saturday": ["09:00-14:00"],
+      "Sunday": []
+    },
+    "lat": 44.478466,
+    "lon": 11.2770834
   }
 ]
